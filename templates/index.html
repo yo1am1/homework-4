@@ -68,13 +68,20 @@
         }
     </style>
 </head>
-<body>
-<h1 style="text-align: center; ">Trepalin Yegor <p> Django HW #4 </p></h1>
-    <nav>
-        <ul>
-            <li><a href="{% url 'generate-student' %}">Generate student</a></li>
-            <li><a href="{% url 'generate-students' %}"><p>Generate students (Input "?count=..." in the link)</p></a></li>
-        </ul>
-    </nav>
-</body>
+    <body>
+    <h1 style="text-align: center; ">Trepalin Yegor <p> Django HW #4 </p></h1>
+        <form>
+            <form method="get" action="{% url 'generate-student' %}">
+                <h3>
+                    New student has been created! ID: {{ student_id }}
+                                    NAME: {{ student_first_name }} {{ student_last_name }}
+                    AGE: {{ student_age }}
+                </h3>
+            </form>
+            <ul>
+                <li><a href="{% url 'generate-student' %}">Generate student</a></li>
+                <li><a href="{% url 'generate-students' %}"><p>Generate students (Input "?count=..." in the link)</p></a></li>
+            </ul>
+        </form>
+    </body>
 </html>
