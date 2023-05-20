@@ -31,7 +31,6 @@ def generate_students(request):
     try:
         if request.method == 'GET':
             count = request.GET.get('count', 0)
-            st, flag = {}, False
 
             try:
                 count = int(count)
